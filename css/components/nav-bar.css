@@ -1,0 +1,75 @@
+.nav {
+  /*하단에 고정시키는 부분*/
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /*끝*/
+  background-color: #f9f9fa;
+  padding: 20px 50px;
+  box-sizing: border-box; /*padding 써도 box 사이즈를 유지해줘*/
+  border-top: 1px solid rgba(121, 121, 121, 0.3);
+}
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__link {
+  color: #2e363e;
+  position: relative; /*노티에 position:absolute를 적용하기 위해 부모에 relative적용해줌*/
+}
+
+@keyframes notificationAnimation {
+  0% {
+    trnasform: none;
+  }
+  50% {
+    transform: translateY(-5px) rotateY(360deg);
+  }
+  100% {
+    trnsform: none;
+  }
+}
+
+.nav__notification {
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+  animation: notificationAnimation 2s ease-in-out infinite;
+}
+
+.nav__badge {
+  background-color: tomato;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: absolute;
+  left: 30px;
+  top: -15px;
+}
+
+@keyframes appearBtnAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.nav__btn {
+  transform: translateY(50px);
+  animation: appearBtnAnimation 0.3s ease-in-out forwards;
+  opacity: 0;
+}
+
+.nav__btn:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.nav__btn:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.nav__btn:last-child {
+  animation-delay: 0.6s;
+}
